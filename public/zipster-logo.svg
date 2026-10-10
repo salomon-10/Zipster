@@ -1,0 +1,14 @@
+<svg width="520" height="156" viewBox="0 0 520 156" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">Zipster</title>
+  <desc id="desc">A blue folder with a zipper beside the Zipster wordmark.</desc>
+  <g transform="translate(4 12)">
+    <path d="M12 30.5C12 26.91 14.91 24 18.5 24H71L87 40H143.5C147.09 40 150 42.91 150 46.5V106C150 109.59 147.09 112.5 143.5 112.5H18.5C14.91 112.5 12 109.59 12 106V30.5Z" fill="#2F86C9"/>
+    <path d="M12 52H150V106C150 109.59 147.09 112.5 143.5 112.5H18.5C14.91 112.5 12 109.59 12 106V52Z" fill="#2475B5"/>
+    <path d="M78 40H150V52H78V40Z" fill="#3C98D4"/>
+    <path d="M113 39L113 111" stroke="#F2C96B" stroke-width="9" stroke-linecap="square" stroke-dasharray="4 9"/>
+    <path d="M105 38L121 38M105 111L121 111" stroke="#F2C96B" stroke-width="6" stroke-linecap="square"/>
+    <circle cx="113" cy="77" r="12" fill="#F2C96B" stroke="#1F2933" stroke-width="5"/>
+    <path d="M113 69V84" stroke="#1F2933" stroke-width="4" stroke-linecap="round"/>
+  </g>
+  <text x="174" y="103" fill="#1F2933" font-family="IBM Plex Sans, Segoe UI, sans-serif" font-size="68" font-weight="700" letter-spacing="-2">Zipster</text>
+</svg>

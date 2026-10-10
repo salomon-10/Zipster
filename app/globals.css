@@ -1,0 +1,148 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ===========================================================================
+   Tokens
+   Paper, ink and one working colour. Components should consume these tokens,
+   so light and dark remain the same interface rather than two designs.
+   =========================================================================== */
+:root {
+  /* System fonts: nothing to download, so text paints on first byte. */
+  --font-sans: ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  --font-mono: ui-monospace, 'SF Mono', 'Cascadia Mono', Menlo, Consolas, monospace;
+
+  --paper: 250 250 249;
+  --surface: 255 255 255;
+  --sunken: 244 244 242;
+  --ink: 24 24 27;
+  --ink-soft: 63 63 70;
+  --muted: 113 113 122;
+  --rail: 232 232 229;
+  --rail-strong: 205 205 200;
+  --accent: 31 111 174;
+  --folder: 140 96 20;
+  --folder-wash: 250 244 228;
+  --file: 113 113 122;
+  --danger: 180 35 24;
+  --danger-wash: 250 236 233;
+  --success: 36 103 71;
+  --success-wash: 232 244 237;
+
+  --gutter: 3.25rem;
+}
+
+.dark {
+  --paper: 17 17 19;
+  --surface: 24 24 27;
+  --sunken: 33 33 37;
+  --ink: 244 244 245;
+  --ink-soft: 212 212 216;
+  --muted: 161 161 170;
+  --rail: 45 45 51;
+  --rail-strong: 72 72 80;
+  --accent: 115 182 227;
+  --folder: 232 190 100;
+  --folder-wash: 58 50 30;
+  --file: 161 161 170;
+  --danger: 240 124 106;
+  --danger-wash: 62 36 32;
+  --success: 125 203 157;
+  --success-wash: 32 52 40;
+}
+
+@layer base {
+  * {
+    border-color: rgb(var(--rail));
+  }
+
+  html {
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    background-color: rgb(var(--paper));
+    color: rgb(var(--ink));
+    font-family: var(--font-sans);
+    font-size: 1rem;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1,
+  h2,
+  h3 {
+    font-weight: 600;
+    letter-spacing: -0.015em;
+    text-wrap: balance;
+  }
+
+  /* One visible focus treatment everywhere, including keyboard-only use. */
+  :focus-visible {
+    outline: 2px solid rgb(var(--accent));
+    outline-offset: 2px;
+    border-radius: 3px;
+  }
+
+  ::selection {
+    background: rgb(var(--accent) / 0.2);
+  }
+
+  ::-webkit-scrollbar {
+    width: 11px;
+    height: 11px;
+  }
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: rgb(var(--rail-strong));
+    border: 3px solid rgb(var(--paper));
+    border-radius: 3px;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+}
+
+@layer components {
+  /* The structural motif: a hairline rail with short ticks, echoing └── .
+     Used for grouped lists so sections read as one tree, not stacked cards. */
+  .rail-list > li {
+    position: relative;
+    padding-left: 1.25rem;
+  }
+
+  .rail-list > li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    border-left: 1px solid rgb(var(--rail));
+  }
+
+  .rail-list > li:last-child::before {
+    bottom: auto;
+    height: 1.4rem;
+  }
+
+  .rail-list > li::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 1.4rem;
+    width: 0.7rem;
+    border-top: 1px solid rgb(var(--rail));
+  }
+
+  .skeleton { background: rgb(var(--sunken)); }
+}

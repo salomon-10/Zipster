@@ -1,0 +1,21 @@
+export const SAMPLE_TREE = `my-app/
+  app/
+    (marketing)/
+      page.tsx
+    api/
+      health/
+        route.ts
+    layout.tsx
+    globals.css
+  components/
+    ui/
+      button.tsx
+  lib/
+    utils.ts
+  public/
+    favicon.ico
+  package.json
+  tsconfig.json
+  .gitignore
+  README.md
+`;
